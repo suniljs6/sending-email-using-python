@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+smtplib Overview:-
+--
+  The smtplib module defines an SMTP client session object that can be used to send
+  mail to any Internet machine with an SMTP or ESMTP listener daemon. 
 
-You can use the [editor on GitHub](https://github.com/ware-wolf/sending-email-using-python/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+  SMTP stands for Simple Mail Transfer Protocol. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+  The smtplib modules is useful for communicating with mail servers to send mail.
 
-### Markdown
+  Sending mail is done with Python's smtplib using an SMTP server. 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+  Actual usage varies depending on complexity of the email and settings of the
+  email server, the instructions here are based on sending email through Gmail.
 
-```markdown
-Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+Working:-
+--
+  Python provides smtplib module, which defines an SMTP client session object that can be used to send mail to any Internet machine with an SMTP or ESMTP listener daemon.
 
-- Bulleted
-- List
+  Here is a simple syntax to create one SMTP object, which can later be used to send an e-mail −
 
-1. Numbered
-2. List
+  import smtplib
 
-**Bold** and _Italic_ and `Code` text
+  smtpObj = smtplib.SMTP( [host [, port [, local_hostname]]] )
 
-[Link](url) and ![Image](src)
-```
+  Here is the detail of the parameters −
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+      host − This is the host running your SMTP server. You can specify IP address of the host or a domain name like tutorialspoint.com. This is optional argument.
 
-### Jekyll Themes
+      port − If you are providing host argument, then you need to specify a port, where SMTP server is listening. Usually this port would be 25.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ware-wolf/sending-email-using-python/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+      local_hostname − If your SMTP server is running on your local machine, then you can specify just localhost as of this option.
 
-### Support or Contact
+  An SMTP object has an instance method called sendmail, which is typically used to do the work of mailing a message. It takes three parameters −
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+      The sender − A string with the address of the sender.
+
+      The receivers − A list of strings, one for each recipient.
+
+      The message − A message as a string formatted as specified in the various RFCs.
